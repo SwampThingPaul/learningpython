@@ -17,7 +17,8 @@ cwd=os.getcwd()
 os.chdir('D:\\_GitHub\\learningpython');# Change working directory
 
 #Read data
-surveys_df = pd.read_csv("D:/_python/DataCarpentry/data/surveys.csv")
+#surveys_df = pd.read_csv("data/surveys.csv")
+surveys_df2 = pd.read_csv("https://ndownloader.figshare.com/files/2292172")
 
 # Selecting Data Using Labels (Column Headings)
 surveys_df['species_id']

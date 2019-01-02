@@ -60,7 +60,8 @@ add_function(2,2)
 #Read CSV files
 import pandas as pd
 pd.read_csv("data/surveys.csv");# Note that pd.read_csv is used because we imported pandas as pd
-surveys_df = pd.read_csv("data/surveys.csv")
+#surveys_df = pd.read_csv("data/surveys.csv")
+surveys_df = pd.read_csv("https://ndownloader.figshare.com/files/2292172")
 
 surveys_df.head()
 surveys_df.tail()
