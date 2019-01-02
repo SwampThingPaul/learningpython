@@ -17,8 +17,8 @@ cwd=os.getcwd()
 os.chdir('D:\\_GitHub\\learningpython');# Change working directory
 
 #Read data
-#surveys_df = pd.read_csv("data/surveys.csv")
-surveys_df2 = pd.read_csv("https://ndownloader.figshare.com/files/2292172")
+surveys_df = pd.read_csv("data/surveys.csv")
+#surveys_df2 = pd.read_csv("https://ndownloader.figshare.com/files/2292172");#if you want to direct download into python
 
 # Selecting Data Using Labels (Column Headings)
 surveys_df['species_id']
@@ -55,6 +55,11 @@ surveys_copy[0:3] = 0
 surveys_copy.head()
 surveys_df.head()
 
+
+# Reference versus copying
+surveys_df = pd.read_csv("https://ndownloader.figshare.com/files/2292172")
+surveys_copy= surveys_df.copy()
+
 #from https://www.shanelynn.ie/select-pandas-dataframe-rows-and-columns-using-iloc-loc-and-ix/
 # Rows:
 surveys_df.iloc[0] # first row of data frame
@@ -69,4 +74,19 @@ surveys_df.iloc[:,-1] # last column of data frame
 surveys_df.iloc[0:5] # first five rows of dataframe
 surveys_df.iloc[:, 0:2] # first two columns of data frame with all rows
 surveys_df.iloc[[0,3,6,24], [0,5,6]] # 1st, 4th, 7th, 25th row + 1st 6th 7th columns.
-surveys_df.iloc[0:5, 5:8] # first 5 rows and 5th, 6th, 7th columns of data frame (county -> phone1).
+surveys_df.iloc[0:5, 5:8] # first 5 rows and 5th, 6th, 7th columns of data frame
+
+
+# select all columns for rows of index values 0 and 10
+surveys_df.loc[[0, 10], :]
+
+surveys_df.loc[0, ['species_id', 'plot_id', 'weight']]
+
+surveys_df.loc[[0, 10, 35549], :]
+
+surveys_df.iloc[2,6]
+
+# Subsetting using criteria
+surveys_df[surveys_df.year == 2002]
+surveys_df[surveys_df.year != 2002]
+surveys_df[(surveys_df.year >= 1980) & (surveys_df.year <= 1985)]
