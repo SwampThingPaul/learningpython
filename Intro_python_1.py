@@ -113,3 +113,5 @@ my_df = pd.DataFrame(d)
 #stacked bar plot
 my_df.plot(kind='bar',stacked=True,title="Example of Stacked Bar Plot")
 my_df.plot(kind='bar',stacked=True,title="Example of Stacked Bar Plot",colors=["green","blue"])
+
+
