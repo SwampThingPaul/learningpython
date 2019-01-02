@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Jan  2 08:45:27 2019
+@author: swmapthingpaul (pjulian@ufl.edu)
 
-@author: Julian_P
 """
 ## Python 101
 ## Find working directory
