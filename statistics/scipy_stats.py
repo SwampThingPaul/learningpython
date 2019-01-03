@@ -93,13 +93,20 @@ anova_results = anova_lm(model)
 print(anova_results)
 
 # Retrieve the parameter estimates
-offset, coef = model._results.params
-plt.plot(x, x*coef + offset)
+beta_0, beta_1 = model._results.params
+plt.plot(x, x*beta_1 + beta_0)
 plt.xlabel('x')
 plt.ylabel('y')
 
-
+#data with linear model depicited run all lines together
 plt.plot(data["x"],data["y"], 'o')
-plt.plot(x, x*coef + offset,color="black")
+plt.plot(x, x*beta_1 + beta_0,color="black")
 plt.xlabel('x')
 plt.ylabel('y')
+
+
+## Categorical variables: comparing groups or multiple categories
+model = ols("VIQ ~ Gender + 1", data).fit()
+print(model.summary())
+
+
